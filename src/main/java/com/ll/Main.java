@@ -45,7 +45,7 @@ class App {
 
                 int i = 0;
 
-                while (i < wiseSayingsSize) {
+                for (; i < wiseSayingsSize; ) {
                     WiseSaying wiseSaying = wiseSayings[i];
                     System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
                     i++;
