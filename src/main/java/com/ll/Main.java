@@ -32,16 +32,18 @@ class App {
                 int id = ++lastId;
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
-
-                System.out.println(wiseSaying);
-
                 lastWiseSaying = wiseSaying;
 
                 System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
             } else if (cmd.equals("목록")) {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
-                System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
+
+                try {
+                    System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
+                } catch (NullPointerException e) {
+                    System.out.println("등록된 명언이 없습니다.");
+                }
             }
         }
 
