@@ -39,10 +39,10 @@ class App {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
 
-                try {
+                if (lastWiseSaying != null) {
                     System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
-                } catch (NullPointerException e) {
-                    System.out.println("등록된 명언이 없습니다.");
+                } else {
+                    System.out.println("명언이 없습니다.");
                 }
             }
         }
