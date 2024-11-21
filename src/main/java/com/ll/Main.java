@@ -1,6 +1,5 @@
 package com.ll;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +17,6 @@ class App {
 
         int lastId = 0;
 
-        WiseSaying lastWiseSaying = null;
         WiseSaying[] wiseSayings = new WiseSaying[3];
         int wiseSayingsSize = 0;
 
@@ -36,22 +34,21 @@ class App {
                 int id = ++lastId;
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
-                lastWiseSaying = wiseSaying;
 
                 wiseSayings[wiseSayingsSize] = wiseSaying;
                 wiseSayingsSize++;
-
-                System.out.println(Arrays.toString(wiseSayings));
 
                 System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
             } else if (cmd.equals("목록")) {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
 
-                if (lastWiseSaying != null) {
-                    System.out.println("%d / %s / %s".formatted(lastWiseSaying.id, lastWiseSaying.author, lastWiseSaying.content));
-                } else {
-                    System.out.println("명언이 없습니다.");
+                int i = 0;
+
+                while (i < wiseSayingsSize) {
+                    WiseSaying wiseSaying = wiseSayings[i];
+                    System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
+                    i++;
                 }
             }
         }
