@@ -16,7 +16,10 @@ class App {
         Scanner scanner = new Scanner(System.in);
 
         int lastId = 0;
+
         WiseSaying lastWiseSaying = null;
+        WiseSaying[] wiseSayings = new WiseSaying[3];
+        int wiseSayingsSize = 0;
 
         while (true) {
             System.out.print("명령) ");
@@ -33,6 +36,9 @@ class App {
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
                 lastWiseSaying = wiseSaying;
+
+                wiseSayings[wiseSayingsSize] = wiseSaying;
+                wiseSayingsSize++;
 
                 System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
             } else if (cmd.equals("목록")) {
