@@ -43,10 +43,9 @@ class App {
                 System.out.println("번호 / 작가 / 명언");
                 System.out.println("----------------------");
 
-                for (int i = 0; i < wiseSayingsSize; ) {
+                for (int i = 0; i < wiseSayingsSize; i++) {
                     WiseSaying wiseSaying = wiseSayings[i];
                     System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
-                    i++;
                 }
             }
         }
