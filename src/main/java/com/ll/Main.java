@@ -33,6 +33,8 @@ class App {
 
                 WiseSaying wiseSaying = new WiseSaying(id, content, author);
 
+                System.out.println(wiseSaying);
+
                 lastWiseSaying = wiseSaying;
 
                 System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
@@ -47,7 +49,7 @@ class App {
     }
 }
 
-class WiseSaying {
+class WiseSaying extends Object {
     int id;
     String content;
     String author;
@@ -56,5 +58,10 @@ class WiseSaying {
         this.id = id;
         this.content = content;
         this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return "WiseSaying (id=%d, content=\"%s\", author=\"%s\")".formatted(id, content, author);
     }
 }
