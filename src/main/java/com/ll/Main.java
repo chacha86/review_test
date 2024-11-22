@@ -10,12 +10,12 @@ public class Main {
 }
 
 class App {
-    Scanner scanner;
-    int lastId;
-    WiseSaying[] wiseSayings;
-    int wiseSayingsSize;
+    private Scanner scanner;
+    private int lastId;
+    private WiseSaying[] wiseSayings;
+    private int wiseSayingsSize;
 
-    App() {
+    public App() {
         scanner = new Scanner(System.in);
         lastId = 0;
         wiseSayings = new WiseSaying[100];
@@ -44,7 +44,7 @@ class App {
         scanner.close();
     }
 
-    WiseSaying addWiseSaying(String content, String author) {
+    private WiseSaying addWiseSaying(String content, String author) {
         int id = ++lastId;
 
         WiseSaying wiseSaying = new WiseSaying(id, content, author);
@@ -55,7 +55,7 @@ class App {
         return wiseSaying;
     }
 
-    void actionAdd() {
+    private void actionAdd() {
         System.out.print("명언 : ");
         String content = scanner.nextLine();
         System.out.print("작가 : ");
@@ -66,7 +66,7 @@ class App {
         System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.id));
     }
 
-    void actionList() {
+    private void actionList() {
         System.out.println("번호 / 작가 / 명언");
         System.out.println("----------------------");
 
@@ -77,12 +77,12 @@ class App {
     }
 }
 
-class WiseSaying extends Object {
-    int id;
-    String content;
-    String author;
+class WiseSaying {
+    public int id;
+    public String content;
+    public String author;
 
-    WiseSaying(int id, String content, String author) {
+    public WiseSaying(int id, String content, String author) {
         this.id = id;
         this.content = content;
         this.author = author;
