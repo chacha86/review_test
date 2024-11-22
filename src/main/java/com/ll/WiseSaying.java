@@ -1,7 +1,7 @@
 package com.ll;
 
 public class WiseSaying {
-    public int id;
+    public final int id;
     public String content;
     public String author;
 
