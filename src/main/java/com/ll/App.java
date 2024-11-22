@@ -56,7 +56,7 @@ public class App {
 
         WiseSaying wiseSaying = addWiseSaying(content, author);
 
-        System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.id));
+        System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.getId()));
     }
 
     private void actionList() {
@@ -65,7 +65,7 @@ public class App {
 
         for (WiseSaying wiseSaying : wiseSayings) {
             if (wiseSaying == null) break;
-            System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
+            System.out.println("%d / %s / %s".formatted(wiseSaying.getId(), wiseSaying.getAuthor(), wiseSaying.getContent()));
         }
     }
 }
