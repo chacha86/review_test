@@ -30,8 +30,11 @@ public class App {
                 actionAdd();
             } else if (cmd.equals("목록")) {
                 actionList();
-            } else if (cmd.equals("삭제?id=1")) {
-                actionDelete(1);
+            } else if (cmd.startsWith("삭제")) {
+                String idStr = cmd.substring(6);
+                int id = Integer.parseInt(idStr);
+
+                actionDelete(id);
             }
         }
 
