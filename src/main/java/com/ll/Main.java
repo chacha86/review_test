@@ -25,12 +25,8 @@ class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
 
-        int id = ++lastId;
-
-        WiseSaying wiseSaying = new WiseSaying(id, "나의 죽음을 적들에게 알리지 말라", "이순신 장군");
-
-        wiseSayings[wiseSayingsSize] = wiseSaying;
-        wiseSayingsSize++;
+        addWiseSaying("나의 죽음을 적들에게 알리지 말라.", "이순신 장군");
+        addWiseSaying("삶이 있는 한 희망은 있다.", "키케로");
 
         while (true) {
             System.out.print("명령) ");
@@ -48,11 +44,7 @@ class App {
         scanner.close();
     }
 
-    void actionAdd() {
-        System.out.print("명언 : ");
-        String content = scanner.nextLine();
-        System.out.print("작가 : ");
-        String author = scanner.nextLine();
+    WiseSaying addWiseSaying(String content, String author) {
         int id = ++lastId;
 
         WiseSaying wiseSaying = new WiseSaying(id, content, author);
@@ -60,7 +52,18 @@ class App {
         wiseSayings[wiseSayingsSize] = wiseSaying;
         wiseSayingsSize++;
 
-        System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
+        return wiseSaying;
+    }
+
+    void actionAdd() {
+        System.out.print("명언 : ");
+        String content = scanner.nextLine();
+        System.out.print("작가 : ");
+        String author = scanner.nextLine();
+
+        WiseSaying wiseSaying = addWiseSaying(content, author);
+
+        System.out.println("%d번 명언이 등록되었습니다.".formatted(wiseSaying.id));
     }
 
     void actionList() {
