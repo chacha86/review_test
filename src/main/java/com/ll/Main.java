@@ -10,10 +10,17 @@ public class Main {
 }
 
 class App {
-    Scanner scanner = new Scanner(System.in);
-    int lastId = 0;
-    WiseSaying[] wiseSayings = new WiseSaying[3];
-    int wiseSayingsSize = 0;
+    Scanner scanner;
+    int lastId;
+    WiseSaying[] wiseSayings;
+    int wiseSayingsSize;
+
+    App() {
+        scanner = new Scanner(System.in);
+        lastId = 0;
+        wiseSayings = new WiseSaying[100];
+        wiseSayingsSize = 0;
+    }
 
     public void run() {
         System.out.println("== 명언 앱 ==");
