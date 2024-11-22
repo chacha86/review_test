@@ -34,13 +34,7 @@ class App {
             } else if (cmd.equals("등록")) {
                 actionAdd();
             } else if (cmd.equals("목록")) {
-                System.out.println("번호 / 작가 / 명언");
-                System.out.println("----------------------");
-
-                for (WiseSaying wiseSaying : wiseSayings) {
-                    if (wiseSaying == null) break;
-                    System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
-                }
+                actionList();
             }
         }
 
@@ -60,6 +54,16 @@ class App {
         wiseSayingsSize++;
 
         System.out.println("%d번 명언이 등록되었습니다.".formatted(id));
+    }
+
+    void actionList() {
+        System.out.println("번호 / 작가 / 명언");
+        System.out.println("----------------------");
+
+        for (WiseSaying wiseSaying : wiseSayings) {
+            if (wiseSaying == null) break;
+            System.out.println("%d / %s / %s".formatted(wiseSaying.id, wiseSaying.author, wiseSaying.content));
+        }
     }
 }
 
