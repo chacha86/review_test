@@ -1,6 +1,6 @@
 package com.ll;
 
-class WiseSaying {
+public class WiseSaying {
     public int id;
     public String content;
     public String author;
