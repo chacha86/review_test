@@ -7,10 +7,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class WiseSayingController {
+    private final Scanner scanner;
     private final List<WiseSaying> wiseSayings;
     private int lastId;
 
-    public WiseSayingController() {
+    public WiseSayingController(Scanner scanner) {
+        this.scanner = scanner;
         this.wiseSayings = new ArrayList<>();
         this.lastId = 0;
     }
@@ -30,7 +32,7 @@ public class WiseSayingController {
         addWiseSaying("삶이 있는 한 희망은 있다.", "키케로");
     }
 
-    public void actionAdd(Scanner scanner) {
+    public void actionAdd() {
         System.out.print("명언 : ");
         String content = scanner.nextLine();
         System.out.print("작가 : ");
@@ -60,7 +62,7 @@ public class WiseSayingController {
         else System.out.println("%d번 명언은 존재하지 않습니다.".formatted(id));
     }
 
-    public void actionModify(Scanner scanner, String cmd) {
+    public void actionModify(String cmd) {
         String idStr = cmd.substring(6);
         int id = Integer.parseInt(idStr);
 
